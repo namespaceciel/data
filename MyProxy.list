@@ -5,9 +5,9 @@ DOMAIN-SUFFIX,bianyuan.xyz
 DOMAIN-SUFFIX,clashcloud.net
 DOMAIN-SUFFIX,ntt-co-jp.club
 DOMAIN-SUFFIX,airport-gov-cn.com
-DOMAIN-SUFFIX,duyaoss.com
-DOMAIN-SUFFIX,limbopro.xyz
-DOMAIN-SUFFIX,merlinblog.xyz
+DOMAIN-KEYWORD,duyaoss
+DOMAIN-KEYWORD,limbopro
+DOMAIN-KEYWORD,merlinblog
 DOMAIN-KEYWORD,n3ro
 DOMAIN-KEYWORD,fc2
 DOMAIN-SUFFIX,ameblo.jp
@@ -16,3 +16,7 @@ DOMAIN-SUFFIX,pornimg.xyz
 DOMAIN-KEYWORD,227
 DOMAIN-KEYWORD,nanabunnonijyuuni
 DOMAIN-SUFFIX,amazonaws.com
+DOMAIN-KEYWORD,cloudflare
+DOMAIN-KEYWORD,y2mate
+DOMAIN-KEYWORD,speedtest
+DOMAIN-KEYWORD,ookla
