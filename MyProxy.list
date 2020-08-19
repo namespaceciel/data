@@ -2,13 +2,9 @@ DOMAIN-SUFFIX,nbcnews.com
 DOMAIN-SUFFIX,s-nbcnews.com
 DOMAIN-SUFFIX,wp.com
 DOMAIN-SUFFIX,bianyuan.xyz
-DOMAIN-SUFFIX,clashcloud.net
-DOMAIN-SUFFIX,ntt-co-jp.club
-DOMAIN-SUFFIX,airport-gov-cn.com
 DOMAIN-KEYWORD,duyaoss
 DOMAIN-KEYWORD,limbopro
 DOMAIN-KEYWORD,merlinblog
-DOMAIN-KEYWORD,n3ro
 DOMAIN-KEYWORD,fc2
 DOMAIN-SUFFIX,ameblo.jp
 DOMAIN-SUFFIX,hpjav.tv
@@ -19,9 +15,6 @@ DOMAIN-SUFFIX,amazonaws.com
 DOMAIN-KEYWORD,y2mate
 DOMAIN-KEYWORD,speedtest
 DOMAIN-KEYWORD,ookla
-DOMAIN-KEYWORD,ssr
-DOMAIN-KEYWORD,v2ray
-DOMAIN-KEYWORD,cdn
 DOMAIN-SUFFIX,v2fly.org
 DOMAIN-SUFFIX,ip.sb
 DOMAIN-SUFFIX,iyouport.org
