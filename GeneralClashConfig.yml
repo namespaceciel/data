@@ -1,3 +1,9 @@
+mixed-port: 7890
+redir-port: 7892
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: '127.0.0.1:9090'
 dns:
     enable: true
     ipv6: false
