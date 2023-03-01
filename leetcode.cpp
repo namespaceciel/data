@@ -96,3 +96,35 @@ inline static std::unordered_set<int> fibonacciNumbers =
 int gcd(int a, int b) {
 	return b == 0 ? a : gcd(b, a % b);
 }
+
+
+// 不带删除移动撤销的基础并查集
+
+struct DSU {
+	std::vector<int> parents, eachSize;
+
+	explicit DSU(int n) : eachSize(n, 1) {
+		parents.reserve(n);
+		for (int i = 0; i < n; ++i) {
+			parents.push_back(i);
+		}
+	}
+
+	int findParent(int index) {    //路径压缩
+		return parents[index] == index ? index : parents[index] = findParent(parents[index]);
+	}
+
+	bool unionParents(int A, int B) {    //启发式合并
+		int ARes = findParent(A);
+		int BRes = findParent(B);
+//		if (ARes == BRes) {
+//			return false;//已经是一个集合了
+//		}
+		if (eachSize[ARes] < eachSize[BRes]) {
+			std::swap(ARes, BRes);
+		}
+		parents[BRes] = ARes;
+		eachSize[ARes] += eachSize[BRes];
+		return true;
+	}
+};
