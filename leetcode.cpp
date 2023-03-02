@@ -136,6 +136,10 @@ struct DSU {
 		return parents[index] == index ? index : parents[index] = findParent(parents[index]);
 	}
 
+	bool isConnected(int A, int B) {
+		return findParent(A) == findParent(B);
+	}
+
 	bool unionParents(int A, int B) {    //启发式合并
 		int ARes = findParent(A);
 		int BRes = findParent(B);
