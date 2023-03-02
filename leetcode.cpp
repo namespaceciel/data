@@ -123,8 +123,9 @@ int gcd(int a, int b) {
 
 struct DSU {
 	std::vector<int> parents, eachSize;
+	int unionNum;
 
-	explicit DSU(int n) : eachSize(n, 1) {
+	explicit DSU(int n) : eachSize(n, 1), unionNum(n) {
 		parents.reserve(n);
 		for (int i = 0; i < n; ++i) {
 			parents.push_back(i);
@@ -146,6 +147,7 @@ struct DSU {
 		}
 		parents[BRes] = ARes;
 		eachSize[ARes] += eachSize[BRes];
+		--unionNum;
 		return true;
 	}
 };
