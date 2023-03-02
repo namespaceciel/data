@@ -5,6 +5,27 @@
 #include <unordered_map>
 #include <algorithm>
 
+struct ListNode {
+	int val;
+	ListNode* next;
+
+	ListNode() : val(0), next(nullptr) {
+	}
+	explicit ListNode(int x) : val(x), next(nullptr) {
+	}
+};
+
+struct TreeNode {
+	int val;
+	TreeNode* left;
+	TreeNode* right;
+
+	TreeNode() : val(0), left(nullptr), right(nullptr) {
+	};
+	explicit TreeNode(int x) : val(x), left(nullptr), right(nullptr) {
+	}
+};
+
 
 // int整型的二进制表示中 1 的个数
 
@@ -117,9 +138,9 @@ struct DSU {
 	bool unionParents(int A, int B) {    //启发式合并
 		int ARes = findParent(A);
 		int BRes = findParent(B);
-//		if (ARes == BRes) {
-//			return false;	//已经是一个集合了
-//		}
+		if (ARes == BRes) {
+			return false;    //已经是一个集合了
+		}
 		if (eachSize[ARes] < eachSize[BRes]) {
 			std::swap(ARes, BRes);
 		}
@@ -300,3 +321,55 @@ public:
 		_range_set(left, right, val, 0, end, root);
 	}
 };
+
+
+// 反转链表
+
+ListNode* reverseList(ListNode* head) {
+	ListNode* first = nullptr, * second = head, * third;    //first一直是反转好的头指针,second在之后待反转,third保存second后
+	while (second) {
+		third = second->next;
+		second->next = first;
+		first = second;
+		second = third;
+	}
+	return first;
+}
+
+
+// 归并排序链表
+
+ListNode* mergeSort(ListNode* first, ListNode* second) {
+	ListNode* fakeHead = new ListNode;
+	ListNode* tool = fakeHead;
+	while (first && second) {
+		if (first->val < second->val) {
+			tool->next = first;
+			first = first->next;
+		} else {
+			tool->next = second;
+			second = second->next;
+		}
+		tool = tool->next;
+	}
+	if (first) {
+		tool->next = first;
+	} else if (second) {
+		tool->next = second;
+	}
+	return fakeHead->next;
+}
+
+ListNode* sortList(ListNode* head) {
+	if (!head || !head->next) {
+		return head;
+	}
+	ListNode* slow = head, * fast = head;
+	while (fast->next && fast->next->next) {
+		slow = slow->next;
+		fast = fast->next->next;
+	}
+	ListNode* newHead = slow->next;
+	slow->next = nullptr;
+	return mergeSort(sortList(head), sortList(newHead));
+}
